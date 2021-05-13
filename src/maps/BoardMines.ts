@@ -1,9 +1,9 @@
-import { Levels } from "../enums/Levels";
+import Level from "../enums/Level";
 
-const BOARD_MINES = new Map<Levels, number>([
-  [Levels.Easy, 10],
-  [Levels.Medium, 40],
-  [Levels.Hard, 99],
+const BOARD_MINES = new Map<Level, number>([
+  [Level.Easy, 10],
+  [Level.Medium, 40],
+  [Level.Hard, 99],
 ]);
 
 export default BOARD_MINES;

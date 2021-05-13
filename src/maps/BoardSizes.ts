@@ -1,9 +1,9 @@
-import { Levels } from "../enums/Levels";
+import Level from "../enums/Level";
 
-const BOARD_SIZES = new Map<Levels, [number, number]>([
-  [Levels.Easy, [9, 9]],
-  [Levels.Medium, [16, 16]],
-  [Levels.Hard, [16, 30]],
+const BOARD_SIZES = new Map<Level, [number, number]>([
+  [Level.Easy, [9, 9]],
+  [Level.Medium, [16, 16]],
+  [Level.Hard, [16, 30]],
 ]);
 
 export default BOARD_SIZES;

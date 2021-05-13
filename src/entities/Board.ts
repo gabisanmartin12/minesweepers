@@ -1,4 +1,4 @@
-import { Levels } from "../enums/Levels";
+import Level from "../enums/Level";
 import BOARD_MINES from "../maps/BoardMines";
 import BOARD_SIZES from "../maps/BoardSizes";
 import { getRandomIntegerBetween } from "../utils/numbers";
@@ -10,7 +10,7 @@ export default class Board {
   private _mines: number;
   private _board: (Cell & Mine)[][] = [[]];
 
-  constructor(level: Levels) {
+  constructor(level: Level) {
     if (!BOARD_SIZES.has(level)) throw new Error("Invalid board size");
     this._size = BOARD_SIZES.get(level) || [0, 0];
     this._mines = BOARD_MINES.get(level) || 0;
@@ -46,8 +46,10 @@ export default class Board {
       const row = getRandomIntegerBetween(0, this._size[0] - 1);
       const col = getRandomIntegerBetween(0, this._size[1] - 1);
 
+      // Is there a mine on that position?
       if (this._board[row][col] instanceof Mine) continue;
 
+      // If it's not
       this._board[row][col] = new Mine();
       this._updateNeighbours(row, col);
       minesToBeAdded--;
